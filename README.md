@@ -22,13 +22,13 @@ drex-platform
 <span style="color: #000000;">
 </span><span style="color: #2d2d2d;">### 1.1 CORE COMPONENTS AND OPEN SOURCE EQUIVALENCIES </span>
 <span style="color: #000000;">
-| COMPONENTE BC | STATUS | EQUIVALENTE OPEN SOURCE | NOSSA IMPLEMENTAÇÃO |
-|----------------------|---------|-------------------------|--------------------------|
-| STR (TRANSFERS) | FECHADO | **MIT OPENCBDC-TX** | DREXCORE-TRANSFER |
-| SPI (INSTANT PAYMENTS)| FECHADO | **LIGHTNING NETWORK** | DREXLN-INSTANT |
-| SELIC (SECURITIES) | FECHADO | **DIGITAL ASSET DAML** | DREXDAML-SECURITIES |
-| RSFN (NETWORK) | FECHADO | **HYPERLEDGER FABRIC** | DREXFABRIC-NETWORK |
-| REGULAÇÃO/COMPLIANCE | FECHADO | CUSTOM (REGTECH) | DREXREGTECH-COMPLIANCE |
+  | COMPONENTE BC | STATUS | EQUIVALENTE OPEN SOURCE | NOSSA IMPLEMENTAÇÃO |
+  |----------------------|---------|-------------------------|--------------------------|
+  | STR (TRANSFERS) | FECHADO | **MIT OPENCBDC-TX** | DREXCORE-TRANSFER |
+  | SPI (INSTANT PAYMENTS)| FECHADO | **LIGHTNING NETWORK** | DREXLN-INSTANT |
+  | SELIC (SECURITIES) | FECHADO | **DIGITAL ASSET DAML** | DREXDAML-SECURITIES |
+  | RSFN (NETWORK) | FECHADO | **HYPERLEDGER FABRIC** | DREXFABRIC-NETWORK |
+  | REGULAÇÃO/COMPLIANCE | FECHADO | CUSTOM (REGTECH) | DREXREGTECH-COMPLIANCE |
 </span>
 <span style="color: #464646;">====================================================================================================</span>
 <span style="color: #464646;">== 2.0 PROJECT STRUCTURE ==</span>
