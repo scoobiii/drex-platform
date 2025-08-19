@@ -1,5 +1,6 @@
 # drex-platform
-drex-platform
+## drex-platform
+
 <pre style="font-family: 'Courier New', monospace; background-color: #f0f0f0; color: #000000; padding: 20px; border: 1px solid #ccc;">
 <span style="color: #d04a02;">****************************************************************************************************</span>
 <span style="color: #d04a02;">* *</span>
@@ -596,14 +597,3 @@ asyncio.run(main())
 <span style="color: #d04a02;">* END OF REPORT *</span>
 <span style="color: #d04a02;">****************************************************************************************************</span>
 </pre>
-
-Sources
-help
-adobe.com
-microsoft.com
-Google Search Suggestions
-Display of Search Suggestions is required when using Grounding with Google Search. Learn more
-what is DREX Brazil
-DREX Fase 1 problemas
-mainframe system z interface
-courier new font
