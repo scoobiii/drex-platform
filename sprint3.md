@@ -605,3 +605,83 @@ PE -> CA: Transfer Confirmed (Private)
 PE -> CB: Funds Received (Private)
 
 note over CA, CB: Privacy Maintained:\n- Transaction amounts hidden\n- Identities anonymous\n- Full regulatory compliance\n\nPerformance:\n- ZK Proof: 2s (BEND parallel)\n- Compliance: 100
+
+@startuml 05_tpf_dvp_transaction
+!theme plain
+
+title TPF Tokenizado DvP Transaction with Parallel Processing
+
+actor "Institution A\n(Seller)" as IA
+actor "Institution B\n(Buyer)" as IB
+participant "STN TPF\nContract" as STN
+participant "DAML Smart\nContract" as DAML
+participant "BEND HVM\nProcessor" as BEND
+participant "Regulatory\nOrchestrator" as RO
+participant "MIT Core\nEngine" as MIT
+database "Audit\nTrail" as AT
+
+IA -> DAML: Offer TPF Sale
+note right: TPF: LTN 2025\nAmount: 100,000\nPrice: 950 DREX per unit
+
+IB -> DAML: Accept TPF Purchase
+note right: Total: 95M DREX\nSettlement: T+0
+
+DAML -> BEND: Initiate DvP Processing
+activate BEND
+
+par Parallel Validation
+    BEND -> BEND: Validate TPF Ownership
+    BEND -> BEND: Validate DREX Balance
+    BEND -> BEND: Check Settlement Risk
+    BEND -> BEND: Regulatory Compliance
+    BEND -> BEND: Market Surveillance
+end
+
+BEND -> RO: Request Regulatory Clearance
+activate RO
+
+par Parallel Regulatory Checks
+    RO -> RO: CVM Securities Rules
+    RO -> RO: BCB Capital Impact
+    RO -> RO: Tax Calculation (IOF)
+    RO -> RO: AML Large Transaction
+    RO -> RO: Market Manipulation Check
+end
+
+RO --> BEND: All Checks Approved ✅
+deactivate RO
+
+BEND -> MIT: Execute Atomic DvP
+activate MIT
+
+MIT -> MIT: Lock TPF (Institution A)
+MIT -> MIT: Lock DREX (Institution B)
+
+alt Atomic Settlement Success
+    MIT -> MIT: Transfer TPF: A → B
+    MIT -> MIT: Transfer DREX: B → A
+    MIT -> MIT: Calculate IOF Tax
+    MIT -> MIT: Transfer Tax to Receita
+    MIT --> BEND: DvP Completed ✅
+else Settlement Failure
+    MIT -> MIT: Unlock TPF (Institution A)
+    MIT -> MIT: Unlock DREX (Institution B)
+    MIT --> BEND: DvP Failed - Rollback ❌
+end
+
+deactivate MIT
+deactivate BEND
+
+BEND -> AT: Log Transaction
+AT -> AT: TPF Transfer Record
+AT -> AT: DREX Payment Record
+AT -> AT: Tax Payment Record
+AT -> AT: Compliance Audit Trail
+
+BEND -> IA: TPF Sale Completed
+BEND -> IB: TPF Purchase Completed
+BEND -> STN: Update TPF Registry
+
+note over IA, IB: Performance Metrics:\n- Total DvP Time: <3s\n- Parallel Validation: 500ms\n- MIT Settlement: <1s\n- Regulatory Checks: 200ms\n- Full Atomicity: ✅\n- Zero Settlement Risk
+
+@enduml
